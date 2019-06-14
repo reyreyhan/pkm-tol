@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: f7a96af9182450d4081d8796b801ea33
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Fira Sans Light
+  fontNames:
+  - Fira Sans Light
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 9b5056c0edb8ec649b4221083b8b7cb9, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
