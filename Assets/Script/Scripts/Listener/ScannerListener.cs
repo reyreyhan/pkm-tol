@@ -18,6 +18,7 @@ public class ScannerListener : MonoBehaviour
     // Dummy Respon
     public GameObject PopUpLoading;
     public GameObject PopUpDetected;
+    public GameObject PopUpTransaksion;
 
     
     void Start()
@@ -133,6 +134,8 @@ public class ScannerListener : MonoBehaviour
                 text[0].text = a;
                 text[1].text = b;
                 text[2].text = c;
+
+                PopUpTransaksion.active = true;
             }
 
         }
@@ -140,6 +143,11 @@ public class ScannerListener : MonoBehaviour
         {
             Debug.Log(www.error);
         }
+    }
+
+    public void CloseTrans()
+    {
+        PopUpTransaksion.active = false;
     }
 
     class Transaction
