@@ -20,6 +20,9 @@ public class ScannerListener : MonoBehaviour
     public GameObject PopUpDetected;
     public GameObject PopUpTransaksion;
 
+    // class
+    ListGerbangViewer ListGerbangViewer;
+
     
     void Start()
     {
@@ -54,22 +57,31 @@ public class ScannerListener : MonoBehaviour
     // Listener jika masuk jangkauan beacons
     private void OnBeaconRangeChanged(Beacon[] beacons)
     {
+        float temp = new float();
         foreach (Beacon b in beacons)
         {
             // Dummy Checking
             if (b != null)
             {
+                if (temp == null || temp > (float)b.range)
+                {
+                    temp = (float)b.range;
+                }
+                else if (temp == (float)b.range)
+                {
+                    PopUpLoading.active = false;
+                    PopUpDetected.active = true;
+
+                    //Place API Transaction Here
+                    //text.text = b.UUID;
+
+                    string uuid = b.UUID;
+                    StartCoroutine(PostTransaction(uuid));
+                    //-----------
+                    iBeaconReceiver.Stop();
+                }
                 // change pop up
-                PopUpLoading.active = false;
-                PopUpDetected.active = true;
-
-                //Place API Transaction Here
-                //text.text = b.UUID;
-
-                string uuid = b.UUID;
-                StartCoroutine(PostTransaction(uuid));
-                //-----------
-                iBeaconReceiver.Stop();
+                
             }
 
             // Featured Checking
